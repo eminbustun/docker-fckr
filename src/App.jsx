@@ -1,14 +1,18 @@
 import React from "react";
 import "@mantine/core/styles.css";
-import { MantineProvider } from "@mantine/core";
+import { MantineProvider, createTheme } from "@mantine/core";
 import HeaderSimple from "./components/HeaderSimple";
 import MantineSearchBar from "./components/SearchMenu";
+import Grids from "./components/Grids";
+import NextButton from "./components/NextButton";
 
 function App() {
   return (
-    <MantineProvider>
+    <MantineProvider defaultColorScheme="dark">
       <HeaderSimple />
       <MantineSearchBar />
+      <Grids />
+      <NextButton />
     </MantineProvider>
   );
 }

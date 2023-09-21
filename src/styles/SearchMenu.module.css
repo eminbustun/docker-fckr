@@ -1,11 +1,17 @@
 .input {
-  width: 80%; /* Adjust the width as needed */
+  width: 50%; /* Adjust the width as needed */
   /* Adjust padding for height and width */
   font-size: 18px; /* Adjust the font size as needed */
+  margin-bottom: 30px;
 }
 
 .border {
+  /*
   border-bottom: rem(1px) solid
     light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
-  height: rem(50px);
+  height: rem(190px);
+  */
+
+  border-bottom: rem(1px) solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
 }
