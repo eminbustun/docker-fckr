@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Container, Group, Burger } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { MantineLogo } from "@mantine/ds";
-import classes from "./HeaderSimple.module.css";
+import classes from "../styles/HeaderSimple.module.css";
 
 const links = [
   { link: "/about", label: "Features" },
@@ -15,13 +15,13 @@ function HeaderSimple() {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
 
-  const items = links.map((link) => (
+  const items = links.map(link => (
     <a
       key={link.label}
       href={link.link}
       className={classes.link}
       data-active={active === link.link || undefined}
-      onClick={(event) => {
+      onClick={event => {
         event.preventDefault();
         setActive(link.link);
       }}
