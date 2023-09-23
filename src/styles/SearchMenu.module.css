@@ -1,3 +1,7 @@
+:root {
+  --general-transition: all 0.4s ease;
+}
+
 .input {
   width: 50%; /* Adjust the width as needed */
   /* Adjust padding for height and width */

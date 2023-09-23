@@ -2,8 +2,9 @@ import { Input, Container, Flex, Text, Space } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 import classes from "../styles/SearchMenu.module.css";
 
+const icon = <IconSearch style={{ width: 16, height: 16 }} />;
+
 const MantineSearchBar = () => {
-  const icon = <IconSearch style={{ width: 16, height: 16 }} />;
   return (
     <>
       <Container

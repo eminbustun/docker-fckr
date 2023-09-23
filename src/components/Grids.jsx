@@ -1,7 +1,15 @@
-import { Group, Paper, Text, ThemeIcon, SimpleGrid, Flex } from "@mantine/core";
+import {
+  Group,
+  Paper,
+  Text,
+  ThemeIcon,
+  SimpleGrid,
+  Image,
+} from "@mantine/core";
 import {
   IconPlus,
   IconApple,
+  IconBrandMongodb,
   IconDownload,
   IconVersions,
   IconUser,
@@ -10,18 +18,36 @@ import classes from "../styles/Grids.module.css";
 
 const data = [
   {
-    dockerImageLogo: "MongoLogo",
+    dockerImageLogo: <IconBrandMongodb />,
     dockerImageName: "Mongo",
-    description: "Mongo is a database.",
-    userImg: "img",
+    description: "Mongo is a database. ",
+    userImg: IconBrandMongodb,
     username: "oguzhanaydin",
     versionCount: 5,
     downloadCount: 72500,
   },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Kafka",
+    description: "Kafka is a message broker.",
+    userImg: "img",
+    username: "cuneytercel",
+    versionCount: 18,
+    downloadCount: 50698,
+  },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Elastic Search",
+    description: "Elastic Search is a fast database.",
+    userImg: "img",
+    username: "eminustun",
+    versionCount: 9,
+    downloadCount: 23458,
+  },
 ];
 
 const Grids = () => {
-  const stats = data.map(stat => {
+  const stats = data.map((stat) => {
     const DiffIcon = IconPlus;
 
     return (
@@ -35,7 +61,12 @@ const Grids = () => {
           fz="xl"
           key={stat.dockerImageName}
         >
-          <Group justify="apart" align="center" pos="relative" display="grid">
+          <Group
+            justify="space-between"
+            align="center"
+            pos="relative"
+            display="grid"
+          >
             <ThemeIcon
               color="gray"
               variant="light"
@@ -45,7 +76,7 @@ const Grids = () => {
               size={38}
               radius="md"
             >
-              <IconApple />
+              {stat.dockerImageLogo}
             </ThemeIcon>
             <div>
               <Text
@@ -61,6 +92,7 @@ const Grids = () => {
                 {stat.description}
               </Text>
             </div>
+
             <ThemeIcon
               right="0%"
               top="0%"
@@ -75,20 +107,20 @@ const Grids = () => {
             >
               <DiffIcon size="1.8rem" stroke={1.5} />
             </ThemeIcon>
-            <div className={classes.onlyFlex}>
-              <div className={classes.dpl}>
+            <Group gap="xs" justify="flex-start">
+              <Group gap="xs">
                 <IconUser />
                 <Text>{stat.username}</Text>
-              </div>
-              <div className={classes.dpl}>
+              </Group>
+              <Group gap="xs">
                 <IconVersions />
                 <Text>{stat.versionCount}</Text>
-              </div>
-              <div className={classes.dpl}>
+              </Group>
+              <Group gap="xs" pos="relative">
                 <IconDownload />
                 <Text>{stat.downloadCount}</Text>
-              </div>
-            </div>
+              </Group>
+            </Group>
           </Group>
           <Text c="dimmed" fz="sm" mt="md">
             <Text component="span" c={stat.diff > 0 ? "teal" : "grey"} fw={700}>
