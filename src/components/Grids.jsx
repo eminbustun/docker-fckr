@@ -1,11 +1,4 @@
-import {
-  Group,
-  Paper,
-  Text,
-  ThemeIcon,
-  SimpleGrid,
-  Image,
-} from "@mantine/core";
+import { Group, Paper, Text, ThemeIcon, SimpleGrid } from "@mantine/core";
 import {
   IconPlus,
   IconApple,

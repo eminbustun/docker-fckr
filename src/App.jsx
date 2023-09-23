@@ -1,20 +1,23 @@
 import React from "react";
 import "@mantine/core/styles.css";
-import { MantineProvider, createTheme } from "@mantine/core";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
 import HeaderSimple from "./components/HeaderSimple";
-import MantineSearchBar from "./components/SearchMenu";
-import Grids from "./components/Grids";
-import NextButton from "./components/NextButton";
+import { MantineProvider } from "@mantine/core";
 
-function App() {
+const App = () => {
   return (
     <MantineProvider defaultColorScheme="dark">
       <HeaderSimple />
-      <MantineSearchBar />
-      <Grids />
-      <NextButton />
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/about" element={<AboutPage />} />
+        </Routes>
+      </Router>
     </MantineProvider>
   );
-}
+};
 
 export default App;

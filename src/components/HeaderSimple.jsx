@@ -5,16 +5,14 @@ import { MantineLogo } from "@mantine/ds";
 import classes from "../styles/HeaderSimple.module.css";
 
 const links = [
+  { link: "/", label: "Home" },
   { link: "/about", label: "About" },
-  //{ link: "/pricing", label: "Pricing" },
-  //{ link: "/learn", label: "Learn" },
-  { link: "/community", label: "Help Us" },
+  { link: "/help-us", label: "Help Us" },
 ];
 
 function HeaderSimple() {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
-
   const items = links.map((link) => (
     <a
       key={link.label}
@@ -22,8 +20,8 @@ function HeaderSimple() {
       className={classes.link}
       data-active={active === link.link || undefined}
       onClick={(event) => {
-        event.preventDefault();
         setActive(link.link);
+        //event.preventDefault();
       }}
     >
       {link.label}
