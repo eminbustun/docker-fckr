@@ -1,8 +1,15 @@
 import { useState } from "react";
-import { Container, Group, Burger } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import {
+  Container,
+  Group,
+  Burger,
+  Transition,
+  Text,
+  Image,
+} from "@mantine/core";
 import { MantineLogo } from "@mantine/ds";
 import classes from "../styles/HeaderSimple.module.css";
+import { useLocation } from "react-router-dom";
 
 const links = [
   { link: "/", label: "Home" },
@@ -11,38 +18,54 @@ const links = [
 ];
 
 const HeaderSimple = () => {
-  const [opened, { toggle }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0].link);
+  const [opened, setOpened] = useState(false);
 
+  const location = useLocation();
+
+  //console.log(location.pathname);
   const items = links.map(link => (
     <a
       key={link.label}
       href={link.link}
       className={classes.link}
-      data-active={active === link.link || undefined}
-      onClick={event => {
-        setActive(link.link);
-        //event.preventDefault();
-      }}
+      data-active={location.pathname === link.link || undefined}
     >
       {link.label}
     </a>
   ));
 
+  //* Burada MantineLogo yerine simdilik yazi yazacaz.
   return (
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
-        <MantineLogo size={28} />
+        <Text size={30} c="green" ff="Martian Mono, sans-serif">
+          DOCKER FUCKER
+        </Text>
         <Group gap={5} visibleFrom="xs">
           {items}
         </Group>
 
         <Burger
           opened={opened}
-          onClick={toggle}
+          onClick={() => {
+            setOpened(!opened);
+          }}
           hiddenFrom="xs"
           size="sm"
-        ></Burger>
+        >
+          <Transition
+            mounted={opened}
+            transition="scale-x"
+            duration={400}
+            timingFunction="ease"
+          >
+            {styles => (
+              <Group style={styles} className={classes.navList}>
+                {items}
+              </Group>
+            )}
+          </Transition>
+        </Burger>
       </Container>
     </header>
   );

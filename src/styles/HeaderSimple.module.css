@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Martian+Mono:wght@700&display=swap");
+
 .header {
   height: rem(56px);
   margin-bottom: rem(50px);
@@ -38,7 +40,20 @@
   }
 
   [data-mantine-color-scheme] &[data-active] {
-    background-color: var(--mantine-color-blue-filled);
+    background-color: green; /*var(--mantine-color-blue-filled);*/
     color: var(--mantine-color-white);
   }
+}
+
+.navList {
+  display: block;
+  position: absolute; /* koordinat vereceğimiz için... */
+  top: 55px;
+  left: 0;
+  background-color: var(--mantine-color-dark-8);
+  width: 50%;
+  height: 100vh;
+  opacity: 0.96;
+  transition: all 0.4 ease;
+  z-index: 98;
 }

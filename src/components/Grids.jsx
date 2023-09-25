@@ -134,6 +134,24 @@ const data = [
     versionCount: 9,
     downloadCount: 23458,
   },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Elastic Search",
+    description: "Elastic Search is a fast database.",
+    userImg: "img",
+    username: "eminustun",
+    versionCount: 9,
+    downloadCount: 23458,
+  },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Elastic Search",
+    description: "Elastic Search is a fast database.",
+    userImg: "img",
+    username: "eminustun",
+    versionCount: 9,
+    downloadCount: 23458,
+  },
 ];
 
 const Grids = () => {
@@ -227,7 +245,9 @@ const Grids = () => {
       <SimpleGrid cols={{ base: 1, sm: 3 }} mb={25}>
         {stats}
       </SimpleGrid>
-      <Button className={classes.btnNext}>Next</Button>
+      <Button color="green" className={classes.btnNext}>
+        Next
+      </Button>
     </div>
   );
 };

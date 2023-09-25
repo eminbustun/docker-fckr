@@ -9,8 +9,8 @@ import { MantineProvider } from "@mantine/core";
 const App = () => {
   return (
     <MantineProvider defaultColorScheme="dark">
-      <HeaderSimple />
       <Router>
+        <HeaderSimple />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/about" element={<AboutPage />} />

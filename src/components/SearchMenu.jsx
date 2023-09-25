@@ -14,8 +14,8 @@ const MantineSearchBar = () => {
         align="center"
         justify="center"
       >
-        <Text fw={700} size="xl" c="blue" ff="Martian Mono, sans-serif">
-          DOCKER FUCKR
+        <Text fw={700} size="xl" c="green" ff="Martian Mono, sans-serif">
+          DOCKER FUCKER
         </Text>
         <Space h={20} />
         <Text size="md">
