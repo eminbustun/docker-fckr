@@ -1,4 +1,11 @@
-import { Group, Paper, Text, ThemeIcon, SimpleGrid } from "@mantine/core";
+import {
+  Group,
+  Paper,
+  Text,
+  ThemeIcon,
+  SimpleGrid,
+  Button,
+} from "@mantine/core";
 import {
   IconPlus,
   IconApple,
@@ -37,10 +44,100 @@ const data = [
     versionCount: 9,
     downloadCount: 23458,
   },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Elastic Search",
+    description: "Elastic Search is a fast database.",
+    userImg: "img",
+    username: "eminustun",
+    versionCount: 9,
+    downloadCount: 23458,
+  },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Elastic Search",
+    description: "Elastic Search is a fast database.",
+    userImg: "img",
+    username: "eminustun",
+    versionCount: 9,
+    downloadCount: 23458,
+  },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Elastic Search",
+    description: "Elastic Search is a fast database.",
+    userImg: "img",
+    username: "eminustun",
+    versionCount: 9,
+    downloadCount: 23458,
+  },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Elastic Search",
+    description: "Elastic Search is a fast database.",
+    userImg: "img",
+    username: "eminustun",
+    versionCount: 9,
+    downloadCount: 23458,
+  },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Elastic Search",
+    description: "Elastic Search is a fast database.",
+    userImg: "img",
+    username: "eminustun",
+    versionCount: 9,
+    downloadCount: 23458,
+  },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Elastic Search",
+    description: "Elastic Search is a fast database.",
+    userImg: "img",
+    username: "eminustun",
+    versionCount: 9,
+    downloadCount: 23458,
+  },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Elastic Search",
+    description: "Elastic Search is a fast database.",
+    userImg: "img",
+    username: "eminustun",
+    versionCount: 9,
+    downloadCount: 23458,
+  },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Elastic Search",
+    description: "Elastic Search is a fast database.",
+    userImg: "img",
+    username: "eminustun",
+    versionCount: 9,
+    downloadCount: 23458,
+  },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Elastic Search",
+    description: "Elastic Search is a fast database.",
+    userImg: "img",
+    username: "eminustun",
+    versionCount: 9,
+    downloadCount: 23458,
+  },
+  {
+    dockerImageLogo: <IconApple />,
+    dockerImageName: "Elastic Search",
+    description: "Elastic Search is a fast database.",
+    userImg: "img",
+    username: "eminustun",
+    versionCount: 9,
+    downloadCount: 23458,
+  },
 ];
 
 const Grids = () => {
-  const stats = data.map((stat) => {
+  const stats = data.map(stat => {
     const DiffIcon = IconPlus;
 
     return (
@@ -127,7 +224,10 @@ const Grids = () => {
 
   return (
     <div className={classes.root}>
-      <SimpleGrid cols={{ base: 1, sm: 3 }}>{stats}</SimpleGrid>
+      <SimpleGrid cols={{ base: 1, sm: 3 }} mb={25}>
+        {stats}
+      </SimpleGrid>
+      <Button className={classes.btnNext}>Next</Button>
     </div>
   );
 };

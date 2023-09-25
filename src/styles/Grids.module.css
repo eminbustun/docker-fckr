@@ -18,3 +18,8 @@
 .onlyFlex {
   display: block;
 }
+
+.btnNext {
+  position: absolute;
+  right: 10px;
+}

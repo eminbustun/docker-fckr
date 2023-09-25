@@ -10,16 +10,17 @@ const links = [
   { link: "/help-us", label: "Help Us" },
 ];
 
-function HeaderSimple() {
+const HeaderSimple = () => {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
-  const items = links.map((link) => (
+
+  const items = links.map(link => (
     <a
       key={link.label}
       href={link.link}
       className={classes.link}
       data-active={active === link.link || undefined}
-      onClick={(event) => {
+      onClick={event => {
         setActive(link.link);
         //event.preventDefault();
       }}
@@ -36,10 +37,15 @@ function HeaderSimple() {
           {items}
         </Group>
 
-        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+        <Burger
+          opened={opened}
+          onClick={toggle}
+          hiddenFrom="xs"
+          size="sm"
+        ></Burger>
       </Container>
     </header>
   );
-}
+};
 
 export default HeaderSimple;
