@@ -5,6 +5,7 @@ import {
   ThemeIcon,
   SimpleGrid,
   Button,
+  ActionIcon,
 } from "@mantine/core";
 import {
   IconPlus,
@@ -201,7 +202,7 @@ const Grids = () => {
               </Text>
             </div>
 
-            <ThemeIcon
+            <ActionIcon
               right="0%"
               top="0%"
               pos="absolute"
@@ -214,7 +215,8 @@ const Grids = () => {
               radius="md"
             >
               <DiffIcon size="1.8rem" stroke={1.5} />
-            </ThemeIcon>
+            </ActionIcon>
+
             <Group gap="xs" justify="flex-start">
               <Group gap="xs">
                 <IconUser />
